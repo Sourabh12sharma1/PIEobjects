@@ -1,0 +1,60 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+    {% block title %}
+    <title>Blog</title>
+    {% endblock %}
+
+    {% block body %}
+<!--    <div class="page-loader">
+        <div class="loader">Loading...</div>
+    </div>  -->
+
+
+    <header id="header" class="home-parallax home-fade dark-bg header-inner">
+        <div class="color-overlay"></div>
+        <div class="container">
+            <h1>Blog</h1>
+            <div class="breadcrumb">
+                <a href="/index">Home</a> <i class="fa fa-angle-double-right"></i> <a href="/blog">Blog</a> <i class="fa fa-angle-double-right"></i> <a href="/blog/{{ blog_all.blog_heading  }}">{{ blog_all.blog_heading }}</a>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="blog-single" class="section blog blog-standard">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <!--Blog Post-->
+    <div class="row blog-post">
+        <div class="col-md-12">
+            <div class="featured-image">
+                <img src="{{ blog_all.image.url }}" class="img-responsive" alt=""/>
+            </div>
+
+            <h2 class="post-title">
+                <a href="javascript:void(0)">{{ blog_all.blog_heading }}</a>
+            </h2>
+            <div class="post-meta">
+                <a href="javascript:void(0)">{{ blog_all.posted_on }}</a>
+                <span>|</span>
+                <a href="javascript:void(0)">{{ blog_all.category }}</a>
+            </div>
+
+            <div class="post-content text-justify">
+                <p>{{ blog_all.blog_content }}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="/blog/" class="btn btn-round btn-dark">Go Back to Blog Page</a>
+    </div>
+    <!--Blog Post end-->
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock%}
